@@ -1,3 +1,7 @@
+//Getting output reference
+var sandwichOutput = document.getElementById("sandwichOutput")
+
+
 // Variable to hold the final price. Default to 0.
 var finalSandwichPrice = 0;
 
@@ -5,17 +9,21 @@ var finalSandwichPrice = 0;
 var selectedTopping;
 
 // Get a reference to the <select> element that has all the meat options
-var meatChooser = document.getElementById("meat-chooser");
+var meatChooser = document.getElementsByName("meat-chooser");
 
 /* 
   A <select> element broadcasts a change event, so you listen for it
   and get the value of the topping from your augmented IIFE
 */
-meatChooser.addEventListener("change", function(event) {
-  // Get the value chosen from the DOM
-  selectedTopping = event.target.value;
 
-  // Determine the price of the topping chosen
+for (var i = 0; i < meatChooser.length; i++) {
+    meatChooser[i].addEventListener("change", function(event) {
+      // Get the value chosen from the DOM
+      selectedTopping = event.target;
+      console.log("selectedTopping", selectedTopping);
 
-  // Add the topping to the SandwichMaker to increase the total price
-});
+      // Determine the price of the topping chosen
+
+      // Add the topping to the SandwichMaker to increase the total price
+    }) 
+};

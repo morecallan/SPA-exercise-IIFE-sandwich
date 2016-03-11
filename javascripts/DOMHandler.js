@@ -6,7 +6,7 @@ var doneButton = document.getElementById("done");
 
 //Empty Sandwich variable
 var finalSandwich = {
-  "bread": [],
+  "bread": "",
   "meat": [],
   "cheese": [],
   "condiments": [],
@@ -19,6 +19,7 @@ var finalSandwichPrice = 0;
 // Variable to hold topping that the user selects
 var selectedTopping;
 
+
 // Get a reference to the <CHECKBOXES> element that has all the meat options
 /* 
   A <select> element broadcasts a change event, so you listen for it
@@ -29,13 +30,8 @@ var breadChooser = document.getElementsByName("bread-chooser");
         breadChooser[i].addEventListener("change", function(event) {
           // Get the value chosen from the DOM
           selectedTopping = event.target;
-          if (selectedTopping.checked) {
-            finalSandwich["bread"].push(selectedTopping.value);
-            SandwichMaker.getBread(event.target.value);
-          } else { 
-            finalSandwich["bread"].splice([finalSandwich["bread"].indexOf(selectedTopping.value)], 1);
-            SandwichMaker.removeBread(event.target.value);
-          }
+          finalSandwich["bread"] = selectedTopping.value;
+          SandwichMaker.getBread(event.target.value);
           // Determine the price of the topping chosen
           // Add the topping to the SandwichMaker to increase the total price
         }) 
@@ -119,6 +115,6 @@ doneButton.addEventListener("click", outputSandwich);
 function outputSandwich() {
   console.log("finalSandwich", finalSandwich);
   finalSandwichPrice = SandwichMaker.getTotalPrice();
-  var buildString = `<h2>Your Damn Sandwich</h2><ul> <li> ${finalSandwich["bread"]} </li> <li> ${finalSandwich["meat"].join(", ")} </li> <li> ${finalSandwich["cheese"]} </li> <li> ${finalSandwich["condiments"]} </li> <li> ${finalSandwich["veggies"]} </li> </ul> <price> ${finalSandwichPrice} </price>`
+  var buildString = `<h2>Your Damn Sandwich</h2><ul> <li> ${finalSandwich["bread"]} </li> <li> ${finalSandwich["meat"].join(", ")} </li> <li> ${finalSandwich["cheese"].join(", ")} </li> <li> ${finalSandwich["condiments"].join(", ")} </li> <li> ${finalSandwich["veggies"].join(", ")} </li> </ul> <price> $${finalSandwichPrice} </price>`
   sandwichOutput.innerHTML += buildString;
 }

@@ -5,7 +5,7 @@ var SandwichMaker = (function(maker) {
   var cheesePrices = {
     "swiss" : 4.50,
     "american" : 7.75,
-    "pepperJack" : 4.00,
+    "pepperjack" : 4.00,
     "munster" : 3.75
   };
 
@@ -16,7 +16,7 @@ var SandwichMaker = (function(maker) {
 };
 
  // Augment the original object with a method to remove cheese
-  maker.removecheese = function(e) {
+  maker.removeCheese = function(e) {
     var currentCheesePrice = cheesePrices[e];
     SandwichMaker.removeTopping(currentCheesePrice);
   }

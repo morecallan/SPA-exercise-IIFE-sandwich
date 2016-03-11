@@ -24,23 +24,6 @@ var selectedTopping;
   A <select> element broadcasts a change event, so you listen for it
   and get the value of the topping from your augmented IIFE
 */
-var meatChooser = document.getElementsByName("meat-chooser");
-    for (var i = 0; i < meatChooser.length; i++) {
-        meatChooser[i].addEventListener("change", function(event) {
-          // Get the value chosen from the DOM
-          selectedTopping = event.target;
-          if (selectedTopping.checked) {
-            finalSandwich["meat"].push(selectedTopping.value);
-            SandwichMaker.getMeat(event.target.value);
-          } else { 
-            finalSandwich["meat"].splice([finalSandwich["meat"].indexOf(selectedTopping.value)], 1);
-            SandwichMaker.removeMeat(event.target.value);
-          }
-          // Determine the price of the topping chosen
-          // Add the topping to the SandwichMaker to increase the total price
-        }) 
-};
-
 var breadChooser = document.getElementsByName("bread-chooser");
     for (var i = 0; i < breadChooser.length; i++) {
         breadChooser[i].addEventListener("change", function(event) {
@@ -75,24 +58,57 @@ var meatChooser = document.getElementsByName("meat-chooser");
         }) 
 };
 
-var meatChooser = document.getElementsByName("meat-chooser");
-    for (var i = 0; i < meatChooser.length; i++) {
-        meatChooser[i].addEventListener("change", function(event) {
+
+var cheeseChooser = document.getElementsByName("cheese-chooser");
+    for (var i = 0; i < cheeseChooser.length; i++) {
+        cheeseChooser[i].addEventListener("change", function(event) {
           // Get the value chosen from the DOM
           selectedTopping = event.target;
           if (selectedTopping.checked) {
-            finalSandwich["meat"].push(selectedTopping.value);
-            SandwichMaker.getMeat(event.target.value);
+            finalSandwich["cheese"].push(selectedTopping.value);
+            SandwichMaker.getCheese(event.target.value);
           } else { 
-            finalSandwich["meat"].splice([finalSandwich["meat"].indexOf(selectedTopping.value)], 1);
-            SandwichMaker.removeMeat(event.target.value);
+            finalSandwich["cheese"].splice([finalSandwich["cheese"].indexOf(selectedTopping.value)], 1);
+            SandwichMaker.removeCheese(event.target.value);
           }
           // Determine the price of the topping chosen
           // Add the topping to the SandwichMaker to increase the total price
         }) 
 };
 
+var condimentChooser = document.getElementsByName("condiment-chooser");
+    for (var i = 0; i < condimentChooser.length; i++) {
+        condimentChooser[i].addEventListener("change", function(event) {
+          // Get the value chosen from the DOM
+          selectedTopping = event.target;
+          if (selectedTopping.checked) {
+            finalSandwich["condiments"].push(selectedTopping.value);
+            SandwichMaker.getCondiment(event.target.value);
+          } else { 
+            finalSandwich["condiments"].splice([finalSandwich["condiments"].indexOf(selectedTopping.value)], 1);
+            SandwichMaker.removeCondiment(event.target.value);
+          }
+          // Determine the price of the topping chosen
+          // Add the topping to the SandwichMaker to increase the total price
+        }) 
+};
 
+var veggieChooser = document.getElementsByName("veggie-chooser");
+    for (var i = 0; i < veggieChooser.length; i++) {
+        veggieChooser[i].addEventListener("change", function(event) {
+          // Get the value chosen from the DOM
+          selectedTopping = event.target;
+          if (selectedTopping.checked) {
+            finalSandwich["veggies"].push(selectedTopping.value);
+            SandwichMaker.getVeggie(event.target.value);
+          } else { 
+            finalSandwich["veggies"].splice([finalSandwich["veggies"].indexOf(selectedTopping.value)], 1);
+            SandwichMaker.removeVeggie(event.target.value);
+          }
+          // Determine the price of the topping chosen
+          // Add the topping to the SandwichMaker to increase the total price
+        }) 
+};
 
 
 

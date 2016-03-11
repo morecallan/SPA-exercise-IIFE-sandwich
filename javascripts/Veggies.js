@@ -11,7 +11,7 @@ var SandwichMaker = (function(maker) {
 
   // Augment the original object with another method
   maker.getVeggie = function(e) {
-    var currentveggiePrice = veggiePrices[e];
+    var currentVeggiePrice = veggiePrices[e];
     SandwichMaker.addTopping(currentVeggiePrice);
 };
 

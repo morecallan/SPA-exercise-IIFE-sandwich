@@ -10,10 +10,19 @@ var SandwichMaker = (function(maker) {
   };
 
   // Augment the original object with another method
-  maker.addMeat = function() {
-    ;
-  };
+  maker.getMeat = function(e) {
+    var currentMeatPrice = meatPrices[e];
+    SandwichMaker.addTopping(currentMeatPrice);
+};
+
+ // Augment the original object with a method to remove meat
+  maker.removeMeat = function(e) {
+    var currentMeatPrice = meatPrices[e];
+    SandwichMaker.removeTopping(currentMeatPrice);
+  }
+
+
 
   // Return the new, augmented object with the new method on it
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});

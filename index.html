@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IIFE Sandwich</title>
+</head>
+<body>
+    <h1>Build Your Sandwich</h1>
+
+    <section id="bread">
+        <h2>Bread</h2>
+        <input type="radio" name="bread-chooser" value="sourdough">Sourdough</input>
+        <input type="radio" name="bread-chooser" value="wheat">Wheat</input>
+        <input type="radio" name="bread-chooser" value="wholeGrain">Whole Grain</input>
+        <input type="radio" name="bread-chooser" value="pumpernickle">Pumpernickle</input>
+    </section>
+
+    <section id="meat">
+        <h2>Meat</h2>
+        <input type="checkbox" name="meat-chooser" value="ham">Ham</input>
+        <input type="checkbox" name="meat-chooser" value="turkey">Turkey</input>
+        <input type="checkbox" name="meat-chooser" value="bacon">Bacon</input>
+        <input type="checkbox" name="meat-chooser" value="tofurkey">Tofurkey</input>
+    </section>
+
+    <section id="cheese">
+        <h2>Cheese</h2>
+        <input type="checkbox" name="cheese-chooser" value="swiss">Swiss</input>
+        <input type="checkbox" name="cheese-chooser" value="american">American</input>
+        <input type="checkbox" name="cheese-chooser" value="pepperJack">Pepperjack</input>
+        <input type="checkbox" name="cheese-chooser" value="munster">Munster</input>
+    </section>
+
+    <section id="condiments">
+        <h2>Condiments</h2>
+        <input type="checkbox" name="condiment-chooser" value"ketchup">Kethcup</input>
+        <input type="checkbox" name="condiment-chooser" value="mustard">Mustard</input>
+        <input type="checkbox" name="condiment-chooser" value="mayo">Mayo</input>
+        <input type="checkbox" name="condiment-chooser" value="relish">Relish</input>
+    </section>
+
+    <section id="veggies">
+        <h2>Veggies</h2>
+        <input type="checkbox" name="veggie-chooser" value="tomato">Tomato</input>
+        <input type="checkbox" name="veggie-chooser" value="cucumber">Cucumber</input>
+        <input type="checkbox" name="veggie-chooser" value="carrot">Carrot</input>
+        <input type="checkbox" name="veggie-chooser" value="olive">Olive</input>
+    </section>
+
+    <button id="done">Done with my sammich.</button>
+
+    <div id="sandwichOutput"></div>
+
+<script type="text/javascript" src="javascripts/SandwichMaker.js"></script>
+<script type="text/javascript" src="javascripts/Bread.js"></script>
+<script type="text/javascript" src="javascripts/Cheese.js"></script>
+<script type="text/javascript" src="javascripts/Condiments.js"></script>
+<script type="text/javascript" src="javascripts/Meat.js"></script>
+<script type="text/javascript" src="javascripts/Veggies.js"></script>
+<script type="text/javascript" src="javascripts/DOMHandler.js"></script>
+</body>
+</html>

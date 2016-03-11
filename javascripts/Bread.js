@@ -1,7 +1,7 @@
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(maker) {
 
-  // Private variable to store the different meat prices
+  // Private variable to store the different bread prices
   var breadPrices = {
     "sourdough" : 1.50,
     "wheat" : 1.75,
@@ -15,7 +15,7 @@ var SandwichMaker = (function(maker) {
     SandwichMaker.addTopping(currentBreadPrice);
 };
 
- // Augment the original object with a method to remove meat
+ // Augment the original object with a method to remove bread
   maker.removeBread = function(e) {
     var currentBreadPrice = breadPrices[e];
     SandwichMaker.removeTopping(currentBreadPrice);
